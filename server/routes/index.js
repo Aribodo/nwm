@@ -5,7 +5,7 @@ var axios = require('axios')
 //API and routing for the App
 //This route renders the home page
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Expresss' });
+  res.send('index', { title: 'Expresss' });
 });
 
 //this API returns the diffrent stock exchange markets globally

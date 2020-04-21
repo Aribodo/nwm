@@ -1,9 +1,10 @@
 import React from 'react';
-import {Modal, ModalBody, Table} from 'reactstrap';
+import {Modal, ModalBody, Table, ModalHeader} from 'reactstrap';
 import actions from './actions'
 import {connect} from 'react-redux';
 
 const style = {fontSize:"14px", color: "grey"}
+const style2 = {fontSize:"14px", color: "grey", borderTop: "none"}
 class Stock extends React.Component {
   state = {}
   // toggles profile modal
@@ -16,7 +17,7 @@ class Stock extends React.Component {
     actions.fetchProfile(exchange.symbol)
     this.toggleModal()
   }
-  
+
   render() {
     const {exchange, profile} = this.props;
     const {modalOpen} = this.state;
@@ -30,32 +31,30 @@ class Stock extends React.Component {
       </td>
     </tr>
     <Modal isOpen={modalOpen} toggle={this.toggleModal.bind(this)}>
+    <ModalHeader toggle={this.toggleModal.bind(this)} style={{color: "#537f9a"}}>{profile && profile.companyName}</ModalHeader>
       { profile ?
-        <ModalBody>
+        <ModalBody style={{paddingRight:20, paddingLeft:20}}>
           <Table>
           <tr>
-            <td>Name</td>
-            <td>{profile.companyName}</td>
+            <td style={style2}>Exchange</td>
+            <td style={style2}>{profile.exchange || "N/A"}</td>
           </tr>
           <tr>
-            <td>Exchange</td>
-            <td>{profile.exchange}</td>
+            <td style={style}>Industry</td>
+            <td style={style}>{profile.industry  || "N/A"}</td>
           </tr>
           <tr>
-            <td>Industry</td>
-            <td>{profile.industry}</td>
+            <td style={style} >CEO</td>
+            <td style={style} >{profile.ceo  || "N/A"}</td>
           </tr>
           <tr>
-            <td>CEO</td>
-            <td>{profile.ceo}</td>
-          </tr>
-          <tr>
-            <td>Website</td>
-            <td>{profile.website}</td>
+            <td style={style} >Website</td>
+            <td style={style} >{profile.website || "N/A"}</td>
           </tr>
           </Table>
           <br/>
-          <p>
+          <h6 className="w-100" style={{textAlign: "center", color: "#537f9a"}}>Bio</h6>
+          <p align="center">
             {profile.description}
           </p>
         </ModalBody>

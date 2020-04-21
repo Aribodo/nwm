@@ -13,5 +13,8 @@
     "concurrently": "^5.1.0"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": "12.16.2"
+  }
 }

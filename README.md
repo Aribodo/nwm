@@ -10,3 +10,5 @@ The 3rd party API's used include https://finnhub.io/ and https://financialmodeli
 3) cd into server directory and run "npm i"
 4) cd into root directory and run "npm run start"
 application shoul be running on http://localhost:3000/
+
+note: for best data set, select "US Exchange" on the home page of the app. 

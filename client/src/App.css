@@ -1,0 +1,34 @@
+/* css within react components  */
+#root {
+  margin: 0;
+  height: 100%;
+}
+.App{
+  margin: 0;
+  height: 100%;
+  height: inherit;
+}
+.selectTitle{
+  text-align: center;
+  color: #092d49;
+  font-weight: bold;
+}
+
+.exchangeRow:hover{
+  background-color: #eef1f5;
+  cursor: pointer;
+}
+
+#exchangeSelect{
+  width: 300px;
+  margin-top: 80px;
+}
+
+#exchange{
+  padding-left: 130px;
+  padding-right: 130px;
+}
+
+#content{
+  margin-bottom: 350px;
+}

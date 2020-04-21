@@ -1,0 +1,14 @@
+html, body {
+    margin: 0;
+    height: 100%;
+},
+#root {
+  height: 100%
+}
+.header {
+  height: 50px;
+  border-bottom: solid thin #e7e5ec;
+  padding-left: 15px;
+  padding-top: 10px;
+
+}
